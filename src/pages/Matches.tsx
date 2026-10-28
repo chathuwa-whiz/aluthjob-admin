@@ -177,6 +177,7 @@ function MatchDrawer({ id, onClose }: { id: number; onClose: () => void }) {
                 ['Owner', data.owner.ownerEmail ?? <Badge tone="warn">No owner</Badge>],
                 ['Found', `${formatFullDateTime(match.createdAt)} (${timeAgo(match.createdAt)})`],
                 ['Decided', match.decidedAt ? formatFullDateTime(match.decidedAt) : 'Not yet'],
+                ...(match.appliedOnSiteAt ? [['Applied on employer site', formatFullDateTime(match.appliedOnSiteAt)] as [string, string]] : []),
               ]}
             />
 
@@ -300,7 +301,7 @@ function LetterEditor({ data, onDone }: { data: MatchDetail; onDone: () => void 
         void submit()
       }}
     >
-      {data.match.status === 'approved' && <Alert tone="warn">The applicant approved the current letter. Saving a change withdraws that approval, so they have to read and approve it again before it can go out.</Alert>}
+      {data.match.status === 'approved' && !data.match.appliedOnSiteAt && <Alert tone="warn">The applicant approved the current letter. Saving a change withdraws that approval, so they have to read and approve it again before it can go out.</Alert>}
       <TextField label="Subject" value={subject} onChange={(event) => setSubject(event.target.value)} maxLength={200} required />
       <TextAreaField label="Letter" value={letter} onChange={(event) => setLetter(event.target.value)} maxLength={8000} required style={{ minHeight: '16rem' }} />
       {error && <Alert tone="bad">{error}</Alert>}

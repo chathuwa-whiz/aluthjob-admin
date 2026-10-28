@@ -288,6 +288,7 @@ export interface MatchDetail {
     coverLetter: string | null
     draftedAt: string | null
     decidedAt: string | null
+    appliedOnSiteAt?: string | null
     confirmedEmail: string | null
     createdAt: string
     updatedAt: string
