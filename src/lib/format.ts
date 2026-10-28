@@ -68,6 +68,8 @@ export const SOURCE_LABEL: Record<JobSource, string> = {
   dreamjobs: 'DreamJobs',
   ikman: 'ikman.lk',
   xpress: 'Xpress Jobs',
+  findmyjob: 'FindMyJob.lk',
+  finders: 'Finders.lk',
 }
 
 export const SOURCES = Object.keys(SOURCE_LABEL) as JobSource[]

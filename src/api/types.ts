@@ -18,7 +18,7 @@ export interface Page<T> {
   offset: number
 }
 
-export type JobSource = 'topjobs' | 'observerjobs' | 'jobpal' | 'governmentjobs' | 'rooster' | 'dreamjobs' | 'ikman' | 'xpress'
+export type JobSource = 'topjobs' | 'observerjobs' | 'jobpal' | 'governmentjobs' | 'rooster' | 'dreamjobs' | 'ikman' | 'xpress' | 'findmyjob' | 'finders'
 export type MatchStatus = 'suggested' | 'approved' | 'rejected'
 export type ApplicationStatus = 'queued' | 'sending' | 'sent' | 'failed' | 'cancelled'
 
